@@ -15,7 +15,7 @@ const Services = () => {
 
   return (
     <>
-      <Helmet><title>Services | Prime Group Holding Inc.</title></Helmet>
+      <Helmet><title>Services | Prime Group Inc.</title></Helmet>
 
       <section className="bg-gradient-to-br from-brand-blue-dark to-brand-blue text-white">
         <div className="container-x py-16">
@@ -29,8 +29,8 @@ const Services = () => {
           <div className="mb-8 flex flex-wrap gap-2">
             {[
               { k: 'all', l: 'All' },
-              { k: 'cleaning', l: 'Cleaning' },
-              { k: 'building', l: 'Building Supply' },
+              { k: 'cleaning', l: 'Prime Cleaning' },
+              { k: 'building', l: 'Building & Home Supply' },
             ].map((t) => (
               <button
                 key={t.k}
@@ -49,7 +49,7 @@ const Services = () => {
               <div key={s._id} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md">
                 <div className="text-3xl">{s.icon || '🛠️'}</div>
                 <span className="mt-2 inline-block rounded-full bg-brand-blue/10 px-2.5 py-0.5 text-xs font-semibold text-brand-blue">
-                  {s.division === 'cleaning' ? 'Cleaning' : 'Supply'}
+                  {s.division === 'cleaning' ? 'Prime Cleaning' : 'Building & Home Supply'}
                 </span>
                 <h3 className="mt-2 text-lg font-bold text-brand-blue-dark">{s.title}</h3>
                 <p className="mt-2 text-sm text-gray-600">{s.description}</p>

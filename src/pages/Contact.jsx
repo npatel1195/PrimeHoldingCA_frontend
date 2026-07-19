@@ -7,7 +7,7 @@ const Contact = () => {
 
   return (
     <>
-      <Helmet><title>Contact Us | Prime Group Holding Inc.</title></Helmet>
+      <Helmet><title>Contact Us | Prime Group Inc.</title></Helmet>
 
       <section className="bg-gradient-to-br from-brand-blue-dark to-brand-blue text-white">
         <div className="container-x py-16">
@@ -40,7 +40,7 @@ const Contact = () => {
                 <div>
                   <p className="font-semibold">Email</p>
                   <a href={`mailto:${contact?.email}`} className="block text-gray-600 hover:text-brand-blue">{contact?.email}</a>
-                  <a href={`mailto:${contact?.email2}`} className="block text-gray-600 hover:text-brand-blue">{contact?.email2}</a>
+                  {contact?.email2 && <a href={`mailto:${contact?.email2}`} className="block text-gray-600 hover:text-brand-blue">{contact?.email2}</a>}
                 </div>
               </li>
               <li className="flex items-start gap-4">

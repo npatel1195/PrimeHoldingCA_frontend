@@ -1,7 +1,7 @@
 {
   "name": "prime-group-frontend",
   "version": "1.0.0",
-  "description": "Prime Group Holding Inc. - Frontend",
+  "description": "Prime Group Inc. - Frontend",
   "type": "module",
   "scripts": {
     "dev": "vite",

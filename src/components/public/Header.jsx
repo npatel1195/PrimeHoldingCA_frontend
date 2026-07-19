@@ -6,11 +6,10 @@ import logo from '../../assets/logo.jpg';
 
 const links = [
   { to: '/', label: 'Home' },
-  { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
-  { to: '/products', label: 'Products' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/products', label: 'Items / Products' },
+  { to: '/projects', label: 'Our Projects' },
+  { to: '/contact', label: 'Contact Us' },
 ];
 
 const Header = () => {
@@ -30,13 +29,13 @@ const Header = () => {
               <HiMail /> {contact?.email || 'info@primegroup.ca'}
             </a>
           </div>
-          <div className="text-white/80">Regina, Saskatchewan</div>
+          <div className="text-white/80">Regina & Surrounding Areas</div>
         </div>
       </div>
 
       <div className="container-x flex items-center justify-between py-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Prime Group Holding" className="h-14 w-auto" />
+          <img src={logo} alt="Prime Group Inc." className="h-14 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">

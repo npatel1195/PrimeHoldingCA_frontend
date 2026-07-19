@@ -14,7 +14,7 @@ const Projects = () => {
 
   return (
     <>
-      <Helmet><title>Our Projects | Prime Group Holding Inc.</title></Helmet>
+      <Helmet><title>Our Projects | Prime Group Inc.</title></Helmet>
 
       <section className="bg-gradient-to-br from-brand-blue-dark to-brand-blue text-white">
         <div className="container-x py-16">
@@ -28,8 +28,8 @@ const Projects = () => {
           <div className="mb-8 flex gap-2">
             {[
               { k: 'all', l: 'All' },
-              { k: 'cleaning', l: 'Cleaning' },
-              { k: 'building', l: 'Building' },
+              { k: 'cleaning', l: 'Prime Cleaning' },
+              { k: 'building', l: 'Building & Home Supply' },
             ].map((t) => (
               <button
                 key={t.k}

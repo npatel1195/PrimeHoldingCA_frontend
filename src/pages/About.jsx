@@ -9,13 +9,13 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Prime Group Holding Inc.</title>
+        <title>About Us | Prime Group Inc.</title>
       </Helmet>
 
       <section className="bg-gradient-to-br from-brand-blue-dark to-brand-blue text-white">
         <div className="container-x py-16">
           <h1 className="text-4xl font-extrabold sm:text-5xl">About Us</h1>
-          <p className="mt-3 max-w-2xl text-white/90">{about?.title || 'Learn about Prime Group Holding Inc.'}</p>
+          <p className="mt-3 max-w-2xl text-white/90">{about?.title || 'Learn about Prime Group Inc.'}</p>
         </div>
       </section>
 
@@ -24,7 +24,7 @@ const About = () => {
           <div>
             <h2 className="h-section">{about?.title || 'Our Story'}</h2>
             <p className="text-gray-700 leading-relaxed">
-              {about?.body || 'Prime Group Holding Inc. is a locally owned company based in Regina, Saskatchewan, bringing together two trusted divisions under one name — Prime Cleaning Service and Prime Building & Home Supply. From build to clean, we deliver reliable, professional service to homeowners and businesses across the region.'}
+              {about?.body || 'Prime Group Inc. is a locally owned company based in Regina, Saskatchewan, bringing together two trusted divisions under one commitment — Prime Cleaning Service and Building & Home Supply. Two businesses. One commitment — to quality, reliability, and customer satisfaction.'}
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[

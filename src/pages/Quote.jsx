@@ -29,7 +29,7 @@ const Quote = () => {
 
   return (
     <>
-      <Helmet><title>Get a Quote | Prime Group Holding Inc.</title></Helmet>
+      <Helmet><title>Get a Quote | Prime Group Inc.</title></Helmet>
 
       <section className="bg-gradient-to-br from-brand-blue-dark to-brand-green-dark text-white">
         <div className="container-x py-16">
@@ -63,7 +63,7 @@ const Quote = () => {
                 <label className="block text-sm font-semibold">Division</label>
                 <select name="division" value={form.division} onChange={onChange} className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-brand-blue focus:outline-none">
                   <option value="cleaning">Prime Cleaning Service</option>
-                  <option value="building">Prime Building & Home Supply</option>
+                  <option value="building">Building & Home Supply</option>
                   <option value="both">Both</option>
                 </select>
               </div>
