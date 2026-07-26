@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import API from '../api/axios';
 import { useData } from '../context/DataContext.jsx';
+import { commitmentCopy } from '../data/commitment.js';
 import {
   HiArrowRight,
   HiPhone,
@@ -366,6 +367,34 @@ const Home = () => {
                   Browse Products <HiArrowRight />
                 </Link>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Commitment */}
+      <section className="bg-gradient-to-r from-brand-blue via-brand-blue-dark to-brand-green-dark text-white">
+        <div className="container-x py-16 sm:py-20">
+          <div className="grid items-center gap-10 md:grid-cols-[1fr_2fr]">
+            <div>
+              <span className="inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+                Our Commitment
+              </span>
+              <h2 className="mt-3 text-3xl font-extrabold sm:text-4xl">
+                {commitmentCopy.commitment.title}
+              </h2>
+              <p className="mt-4 text-white/90">{commitmentCopy.commitment.body}</p>
+              <p className="mt-5 text-sm font-semibold uppercase tracking-wider text-white/80">
+                {commitmentCopy.commitment.brand}
+              </p>
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+                alt="Prime Group team"
+                className="h-72 w-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
