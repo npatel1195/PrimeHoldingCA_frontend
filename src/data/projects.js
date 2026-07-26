@@ -65,6 +65,6 @@ export const sampleProjects = [
       'Full move-out clean plus carpet shampooing. Inside oven, fridge, all windows, baseboards, and a refresh of tired grout in two bathrooms.',
     outcome: 'Tenant got full damage deposit back. Landlord signed up for our turnover service.',
     before: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
-    after: 'https://images.unsplash.com/photo-1556909195-a5d52b8e9b87?auto=format&fit=crop&w=800&q=80',
+    after: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80',
   },
 ];
