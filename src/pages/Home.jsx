@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import API from '../api/axios';
 import { useData } from '../context/DataContext.jsx';
 import { commitmentCopy } from '../data/commitment.js';
+import { sampleProjects } from '../data/projects.js';
 import {
   HiArrowRight,
   HiPhone,
@@ -75,28 +76,18 @@ const supplyBullets = [
   'And Much More',
 ];
 
-const projectTiles = [
-  { label: 'Kitchen Project', tone: 'kitchen' },
-  { label: 'Exterior Build', tone: 'exterior' },
-  { label: 'Interior Finish', tone: 'interior' },
-  { label: 'Living Space', tone: 'living' },
-];
-
 const Home = () => {
   const { contact } = useData();
   const [services, setServices] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
-  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     Promise.all([
       API.get('/services').catch(() => ({ data: [] })),
       API.get('/testimonials').catch(() => ({ data: [] })),
-      API.get('/projects').catch(() => ({ data: [] })),
-    ]).then(([s, t, p]) => {
+    ]).then(([s, t]) => {
       setServices((s.data || []).slice(0, 6));
       setTestimonials((t.data || []).slice(0, 3));
-      setProjects((p.data || []).slice(0, 4));
     });
   }, []);
 
@@ -132,7 +123,13 @@ const Home = () => {
         <div className="grid md:grid-cols-2">
           {/* Left: Cleaning */}
           <div className="relative min-h-[460px] overflow-hidden bg-gradient-to-br from-brand-blue-dark to-brand-blue">
-            <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_30%,white,transparent_50%)]" />
+            <img
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
+              alt="Prime Cleaning Service team"
+              className="absolute inset-0 h-full w-full object-cover opacity-30"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-blue-dark/85 via-brand-blue-dark/70 to-brand-blue/60" />
             <div className="container-x relative flex h-full flex-col justify-center py-20 text-white">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
                 Welcome to {company}
@@ -194,7 +191,13 @@ const Home = () => {
 
           {/* Right: Supply */}
           <div className="relative min-h-[460px] overflow-hidden bg-gradient-to-br from-brand-green-dark to-brand-green">
-            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_70%_30%,white,transparent_50%)]" />
+            <img
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+              alt="Prime Home & Building Supply materials"
+              className="absolute inset-0 h-full w-full object-cover opacity-30"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-green-dark/85 via-brand-green-dark/70 to-brand-green/60" />
             <div className="container-x relative flex h-full flex-col justify-center py-20 text-white">
               <h2 className="text-3xl font-extrabold sm:text-4xl">
                 Quality Materials.
@@ -221,14 +224,16 @@ const Home = () => {
               </div>
             </div>
 
-            {/* circular badge top-left */}
-            <div className="absolute left-6 top-6 hidden h-24 w-24 items-center justify-center rounded-full bg-white/95 text-brand-green-dark shadow-lg md:flex">
-              <FaHome className="text-3xl" />
-            </div>
-            <div className="absolute left-10 top-32 hidden rounded-md bg-brand-green-dark px-4 py-2 text-center text-xs font-bold uppercase tracking-wider text-white shadow-md md:block">
-              Prime Group
-              <br />
-              Home &amp; Building Supply
+            {/* circular badge top-left with label inline */}
+            <div className="absolute left-6 top-6 hidden items-center gap-3 md:flex">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white/95 text-brand-green-dark shadow-lg">
+                <FaHome className="text-3xl" />
+              </div>
+              <div className="rounded-md bg-brand-green-dark px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-md">
+                Prime Group
+                <br />
+                Home &amp; Building Supply
+              </div>
             </div>
           </div>
         </div>
@@ -421,29 +426,73 @@ const Home = () => {
               </ul>
             </div>
 
-            {/* Our Projects */}
-            <div>
-              <h3 className="text-lg font-extrabold text-brand-blue-dark">Our Projects</h3>
-              <div className="mt-5 grid grid-cols-2 gap-2">
-                {(projects.length ? projects.slice(0, 4) : projectTiles).map((p, i) => {
-                  const img = p.image ? `${API_BASE}/uploads/${p.image}` : null;
-                  return (
-                    <div
-                      key={p._id || p.label || i}
-                      className="aspect-square overflow-hidden rounded-md bg-gradient-to-br from-brand-blue to-brand-green"
-                    >
-                      {img ? (
-                        <img src={img} alt={p.title || p.label} className="h-full w-full object-cover" loading="lazy" />
-                      ) : (
-                        <div className="flex h-full items-end p-2 text-[10px] font-semibold text-white/90">
-                          {p.title || p.label}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+            {/* Our Projects (before/after samples) — full-width row */}
+            <div className="lg:col-span-4">
+              <div className="flex items-end justify-between">
+                <div>
+                  <h3 className="text-lg font-extrabold text-brand-blue-dark">Our Projects</h3>
+                  <p className="mt-1 text-xs text-gray-600">
+                    Real work from Regina — see the before &amp; after.
+                  </p>
+                </div>
+                <Link
+                  to="/projects"
+                  className="hidden text-xs font-semibold text-brand-blue hover:text-brand-blue-dark sm:inline-flex sm:items-center sm:gap-1"
+                >
+                  View All Projects <HiArrowSmRight />
+                </Link>
               </div>
-              <div className="mt-4 text-center">
+              <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {sampleProjects.map((p, i) => (
+                  <article
+                    key={i}
+                    className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition hover:shadow-lg"
+                  >
+                    <div className="relative grid grid-cols-2">
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <img
+                          src={p.before}
+                          alt={`${p.title} — before`}
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                        <span className="absolute left-2 top-2 rounded bg-black/70 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                          Before
+                        </span>
+                      </div>
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <img
+                          src={p.after}
+                          alt={`${p.title} — after`}
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                        <span className="absolute right-2 top-2 rounded bg-brand-green px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                          After
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <span
+                        className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+                          p.divisionTone === 'green'
+                            ? 'bg-brand-green/10 text-brand-green'
+                            : 'bg-brand-blue/10 text-brand-blue'
+                        }`}
+                      >
+                        {p.division}
+                      </span>
+                      <h4 className="mt-2 text-sm font-extrabold text-brand-blue-dark">{p.title}</h4>
+                      <p className="mt-0.5 text-[11px] text-gray-500">{p.location}</p>
+                      <p className="mt-2 text-xs leading-relaxed text-gray-700">{p.description}</p>
+                      <p className="mt-2 border-t border-gray-100 pt-2 text-[11px] font-semibold text-brand-green-dark">
+                        ✓ {p.outcome}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+              <div className="mt-5 text-center sm:hidden">
                 <Link
                   to="/projects"
                   className="inline-flex items-center gap-2 rounded-md bg-brand-blue px-4 py-2 text-xs font-semibold text-white hover:bg-brand-blue-dark"
