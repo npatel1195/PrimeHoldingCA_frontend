@@ -43,8 +43,9 @@ const Footer = () => {
           <h3 className="mb-4 text-lg font-bold">Contact</h3>
           <ul className="space-y-3 text-sm text-white/80">
             <li className="flex items-start gap-2"><HiLocationMarker className="mt-1" /> {contact?.address || 'Regina, SK'}</li>
-            <li className="flex items-start gap-2"><HiPhone className="mt-1" /> {contact?.phone || '639-560-3687'}</li>
-            <li className="flex items-start gap-2"><HiMail className="mt-1" /> {contact?.email || 'info@primegroup.ca'}</li>
+            <li className="flex items-start gap-2"><HiPhone className="mt-1" /> {contact?.phone || '306-501-2483'}</li>
+            <li className="flex items-start gap-2"><HiPhone className="mt-1" /> 306-502-2162</li>
+            <li className="flex items-start gap-2"><HiMail className="mt-1" /> {contact?.email || 'contact@primegroupholding.ca'}</li>
           </ul>
         </div>
       </div>

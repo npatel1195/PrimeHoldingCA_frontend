@@ -32,14 +32,21 @@ const Contact = () => {
                 <HiPhone className="mt-1 text-2xl text-brand-blue" />
                 <div>
                   <p className="font-semibold">Phone</p>
-                  <a href={`tel:${contact?.phone}`} className="text-gray-600 hover:text-brand-blue">{contact?.phone}</a>
+                  <a href={`tel:${contact?.phone || '306-501-2483'}`} className="block text-gray-600 hover:text-brand-blue">
+                    {contact?.phone || '306-501-2483'}
+                  </a>
+                  <a href={`tel:306-502-2162`} className="block text-gray-600 hover:text-brand-blue">
+                    306-502-2162
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-4">
                 <HiMail className="mt-1 text-2xl text-brand-blue" />
                 <div>
                   <p className="font-semibold">Email</p>
-                  <a href={`mailto:${contact?.email}`} className="block text-gray-600 hover:text-brand-blue">{contact?.email}</a>
+                  <a href={`mailto:${contact?.email || 'contact@primegroupholding.ca'}`} className="block text-gray-600 hover:text-brand-blue">
+                    {contact?.email || 'contact@primegroupholding.ca'}
+                  </a>
                   {contact?.email2 && <a href={`mailto:${contact?.email2}`} className="block text-gray-600 hover:text-brand-blue">{contact?.email2}</a>}
                 </div>
               </li>

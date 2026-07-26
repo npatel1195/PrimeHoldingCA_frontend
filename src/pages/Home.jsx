@@ -91,8 +91,8 @@ const Home = () => {
     });
   }, []);
 
-  const phone = contact?.phone || '639-560-3687';
-  const email = contact?.email || 'info@primegroup.ca';
+  const phone = contact?.phone || '306-501-2483';
+  const email = contact?.email || 'contact@primegroupholding.ca';
   const address = contact?.address || '4213 Albulet Drive, Regina, SK S4W 0L7';
   const company = contact?.companyName || 'Prime Group Inc.';
 
@@ -111,6 +111,9 @@ const Home = () => {
         <div className="container-x flex flex-wrap items-center justify-end gap-x-6 gap-y-1 py-2 text-xs">
           <a href={`tel:${phone}`} className="flex items-center gap-1.5 hover:text-brand-green">
             <HiPhone className="text-sm" /> {phone}
+          </a>
+          <a href={`tel:306-502-2162`} className="flex items-center gap-1.5 hover:text-brand-green">
+            <HiPhone className="text-sm" /> 306-502-2162
           </a>
           <a href={`mailto:${email}`} className="flex items-center gap-1.5 hover:text-brand-green">
             <HiMail className="text-sm" /> {email}
@@ -541,11 +544,14 @@ const Home = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <HiPhone className="mt-0.5 shrink-0 text-brand-blue" />
-                  <a href={`tel:${phone}`} className="hover:text-brand-blue-dark">{phone}</a>
+                  <div className="flex flex-col">
+                    <a href={`tel:${phone}`} className="hover:text-brand-blue-dark">{phone}</a>
+                    <a href={`tel:306-502-2162`} className="hover:text-brand-blue-dark">306-502-2162</a>
+                  </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <HiMail className="mt-0.5 shrink-0 text-brand-blue" />
-                  <a href={`mailto:${email}`} className="hover:text-brand-blue-dark">{email}</a>
+                  <a href={`mailto:${email}`} className="hover:text-brand-blue-dark break-all">{email}</a>
                 </li>
               </ul>
               <div className="mt-5 aspect-[4/3] overflow-hidden rounded-md bg-gradient-to-br from-blue-100 to-green-100">

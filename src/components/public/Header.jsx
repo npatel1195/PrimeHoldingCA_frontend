@@ -22,11 +22,14 @@ const Header = () => {
       <div className="bg-brand-blue-dark text-white text-xs">
         <div className="container-x flex flex-wrap items-center justify-between gap-2 py-2">
           <div className="flex flex-wrap items-center gap-4">
-            <a href={`tel:${contact?.phone || '639-560-3687'}`} className="flex items-center gap-1 hover:text-brand-green">
-              <HiPhone /> {contact?.phone || '639-560-3687'}
+            <a href={`tel:${contact?.phone || '306-501-2483'}`} className="flex items-center gap-1 hover:text-brand-green">
+              <HiPhone /> {contact?.phone || '306-501-2483'}
             </a>
-            <a href={`mailto:${contact?.email || 'info@primegroup.ca'}`} className="hidden items-center gap-1 sm:flex hover:text-brand-green">
-              <HiMail /> {contact?.email || 'info@primegroup.ca'}
+            <a href={`tel:306-502-2162`} className="flex items-center gap-1 hover:text-brand-green">
+              <HiPhone /> 306-502-2162
+            </a>
+            <a href={`mailto:${contact?.email || 'contact@primegroupholding.ca'}`} className="hidden items-center gap-1 sm:flex hover:text-brand-green">
+              <HiMail /> {contact?.email || 'contact@primegroupholding.ca'}
             </a>
           </div>
           <div className="text-white/80">Regina & Surrounding Areas</div>
